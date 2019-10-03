@@ -8,15 +8,23 @@ td {
 <title>Parallel Compiler Data</title>
 </head>
 <p style="font-weight: bold;">These are full crate graph timings. Links lead to cargo -Ztiming
-output.</p>
+output. Master is a non-parallel-enabled compiler.</p>
 <table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th></th><th></th>
+        <th></th>
+        <th colspan=2>Deltas (X - master)<th>
+        <th colspan=3>Average CPU Usage (%)</th>
+    </tr>
     <tr>
         <th>Name</th>
         <th>master</th><th>parallel t-8</th><th>parallel t-16</th>
         <th style="color: white;">some blank</th>
-        <th>t-8  - master</th>
-        <th>t-16 - master</th>
-        <th style="color: white;">avg %cpu:</th>
+        <th>t-8</th>
+        <th>t-16</th>
+        <th style="color: white;">some blank</th>
         <th>master</th><th>parallel t-8</th><th>parallel t-16</th>
     </tr>
     <tr>
