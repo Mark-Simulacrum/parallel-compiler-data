@@ -10,7 +10,15 @@ td {
 <p style="font-weight: bold;">These are full crate graph timings. Links lead to cargo -Ztiming
 output.</p>
 <table>
-    <tr><th>Name</th><th>master</th><th>parallel t-8</th><th>parallel t-16</th></tr>
+    <tr>
+        <th>Name</th>
+        <th>master</th><th>parallel t-8</th><th>parallel t-16</th>
+        <th style="color: white;">some blank</th>
+        <th>t-8  - master</th>
+        <th>t-16 - master</th>
+        <th style="color: white;">avg %cpu:</th>
+        <th>master</th><th>parallel t-8</th><th>parallel t-16</th>
+    </tr>
     <tr>
         <td>cargo-check</td>
         <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/cargo-check-timing.html">35.7s</a></td>
@@ -107,3 +115,50 @@ output.</p>
         <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-codegen-opt-timing.html">35.1s</a></td>
     </tr>
 </table>
+<script>
+    "use strict";
+    async function main() {
+        let rows = document.querySelectorAll("tr");
+        for (let row of rows) {
+            if (row.querySelectorAll("td").length != 4 ||
+                row.querySelectorAll("a").length != 3) {
+                continue;
+            }
+            row.appendChild(document.createElement("td"));
+            {
+                let [master, p8, p16] = [...row.querySelectorAll("a")].map(anchor =>
+                    anchor.innerText.replace("s", ""));
+                let td = document.createElement("td");
+                td.innerHTML = `${(p8 - master).toFixed(0)}`;
+                row.appendChild(td);
+                td = document.createElement("td");
+                td.innerHTML = `${(p16 - master).toFixed(0)}`;
+                row.appendChild(td);
+            }
+            row.appendChild(document.createElement("td"));
+            let [master, p8, p16] = [...row.querySelectorAll("a")].map(anchor => getCpuData(anchor.href));
+            for (let p of [master, p8, p16]) {
+                let cpu_data = await p;
+                let avg = avgCpuUsage(cpu_data);
+                let td = document.createElement("td");
+                td.innerHTML = `${avg.toFixed(0)}%`;
+                row.appendChild(td);
+            }
+        }
+    }
+
+    async function getCpuData(href) {
+        let page = await fetch(href);
+        let body = await page.text();
+        body = body.substr(body.indexOf("const CPU_USAGE"));
+        body = body.substr(0, body.indexOf(";"));
+        body = body.substr(body.indexOf("["));
+        return eval(body);
+    }
+
+    function avgCpuUsage(cpu_data) {
+        return cpu_data.map(([_a, pct]) => pct).reduce((a, b) => a + b, 0) / cpu_data.length;
+    }
+
+    main();
+</script>
