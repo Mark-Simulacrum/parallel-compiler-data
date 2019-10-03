@@ -157,7 +157,18 @@ output.</p>
     }
 
     function avgCpuUsage(cpu_data) {
-        return cpu_data.map(([_a, pct]) => pct).reduce((a, b) => a + b, 0) / cpu_data.length;
+        // we use the average value theorem with a trapezoidal reimann sum
+        let sum = 0;
+        let previous_time = 0;
+        let previous_pct = 0;
+        for (let [time, pct] of cpu_data) {
+            sum += 0.5 * (pct + previous_pct) * (time - previous_time);
+            previous_time = time;
+            previous_pct = pct;
+        }
+
+        console.log(sum, previous_time, cpu_data);
+        return sum / previous_time;
     }
 
     main();
