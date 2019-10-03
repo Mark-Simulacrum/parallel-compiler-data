@@ -1,0 +1,104 @@
+<style>
+a:visited { color: blue; }
+td {
+    padding: 0.25em 0.5em;
+}
+</style>
+<table>
+    <tr><th>Name</th><th>master</th><th>parallel t-8</th><th>parallel t-16</th></tr>
+    <tr>
+        <td>cargo-check</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/cargo-check-timing.html">35.7s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/cargo-check-timing.html">24.0s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/cargo-check-timing.html">26.2s</a></td>
+    </tr>
+    <tr>
+        <td>cargo-debug</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/cargo-debug-timing.html">61.0s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/cargo-debug-timing.html">49.1s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/cargo-debug-timing.html">50.9s</a></td>
+    </tr>
+    <tr>
+        <td>cargo-opt</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/cargo-opt-timing.html">97.3s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/cargo-opt-timing.html">86.4s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/cargo-opt-timing.html">87.5s</a></td>
+    </tr>
+    <tr><td><hr></td></tr>
+    <tr>
+        <td>script-servo-check</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/script-servo-check-timing.html">313.9s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/script-servo-check-timing.html">273.2s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/script-servo-check-timing.html">287.5s</a></td>
+    </tr>
+    <tr>
+        <td>script-servo-debug</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/script-servo-debug-timing.html">563.8s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/script-servo-debug-timing.html">511.5s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/script-servo-debug-timing.html">519.3s</a></td>
+    </tr>
+    <tr>
+        <td>script-servo-opt</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/script-servo-opt-timing.html">558.4s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/script-servo-opt-timing.html">515.0s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/script-servo-opt-timing.html">536.4s</a></td>
+    </tr>
+    <tr><td><hr></td></tr>
+    <tr>
+        <td>sccache-check</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/sccache-check-timing.html">31.1s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/sccache-check-timing.html">23.5s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/sccache-check-timing.html">27.8s</a></td>
+    </tr>
+    <tr>
+        <td>sccache-debug</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/sccache-debug-timing.html">49.3s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/sccache-debug-timing.html">41.9s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/sccache-debug-timing.html">46.5s</a></td>
+    </tr>
+    <tr>
+        <td>sccache-opt</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/sccache-opt-timing.html">85.0s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/sccache-opt-timing.html">79.5s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/sccache-opt-timing.html">82.0s</a></td>
+    </tr>
+    <tr><td><hr></td></tr>
+    <tr>
+        <td>rustc-std-check</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/rustc-std-check-timing.html">21.4s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/rustc-std-check-timing.html">11.1s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-std-check-timing.html">10.3s</a></td>
+    </tr>
+    <tr>
+        <td>rustc-std-opt</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/rustc-std-opt-timing.html">29.1s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/rustc-std-opt-timing.html">18.5s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-std-opt-timing.html">18.3s</a></td>
+    </tr>
+    <tr><td><hr></td></tr>
+    <tr>
+        <td>rustc-compiler-check</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/rustc-compiler-check-timing.html">75.8s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/rustc-compiler-check-timing.html">46.4s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-compiler-check-timing.html">46.3s</a></td>
+    </tr>
+    <tr>
+        <td>rustc-compiler-opt</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/rustc-compiler-opt-timing.html">265.0s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/rustc-compiler-opt-timing.html">236.4s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-compiler-opt-timing.html">217.2s</a></td>
+    </tr>
+    <tr><td><hr></td></tr>
+    <tr>
+        <td>rustc-codegen-check</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/rustc-codegen-check-timing.html">7.3s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/rustc-codegen-check-timing.html">5.9s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-codegen-check-timing.html">5.9s</a></td>
+    </tr>
+    <tr>
+        <td>rustc-codegen-opt</td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/master/rustc-codegen-opt-timing.html">37.4s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-8/rustc-codegen-opt-timing.html">35.3s</a></td>
+        <td><a href="https://mark.rousskov.org/parallel-compiler-data/parallel-16/rustc-codegen-opt-timing.html">35.1s</a></td>
+    </tr>
+</table>
