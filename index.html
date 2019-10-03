@@ -129,10 +129,10 @@ output.</p>
                 let [master, p8, p16] = [...row.querySelectorAll("a")].map(anchor =>
                     anchor.innerText.replace("s", ""));
                 let td = document.createElement("td");
-                td.innerHTML = `${(p8 - master).toFixed(0)}`;
+                td.innerHTML = `${(p8 - master).toFixed(0)}s`;
                 row.appendChild(td);
                 td = document.createElement("td");
-                td.innerHTML = `${(p16 - master).toFixed(0)}`;
+                td.innerHTML = `${(p16 - master).toFixed(0)}s`;
                 row.appendChild(td);
             }
             row.appendChild(document.createElement("td"));
